@@ -1,0 +1,42 @@
+extends produkt_layout
+
+block content  
+    .container
+        .columns
+            .column.col-xl-6.col-lg-5.col-md-12
+                h1#produkt= produkt.produkt[key].titel
+                a(href="detailseite.html")
+                    img.hide-lg(src=produkt.produkt[key].bild, alt=produkt.produkt[key].titel, width="400")
+                a.show-lg(href="detailseite.html")
+                    img(src=produkt.produkt[key].bild, alt=produkt.produkt[key].titel)
+            .column.col-xl-6.col-lg-7.col-md-12
+                p.preis= produkt.produkt[key].preis
+                p= produkt.produkt[key].kurzbeschreibung
+                h3 Verfügbarkeit:
+                p= produkt.produkt[key].verfuegbar
+
+        #grenze
+
+        .columns
+            .column.col-lg-6.col-md-12
+                h1#rezensionen Rezensionen
+                each rezension in produkt.produkt[key].rezensionen
+                    h3= rezension.autor
+                    p!= rezension.bewertung
+                    p= rezension.bewertungstext
+
+            .columns#Benutzer
+                .column.col-6.col-md-12
+                    h3 Autor 3
+                    p &#9733; Sterne
+                    p
+                        | Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        | Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        | quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        | earum inventore minima.
+                        | Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        | Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        | quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        | earum inventore minima.
+                
+

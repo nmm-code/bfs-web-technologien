@@ -1,0 +1,31 @@
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://unpkg.com/spectre.css/dist/spectre.min.css")
+    link(rel="stylesheet", href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css")
+    link(rel="stylesheet", href="../stylesheets/style.css")
+    script(src="../javascripts/script.js", defer)
+    title Produktübersicht
+
+  body
+    header
+      img.Logo(src="/images/logo.svg", alt="Logo der Shopseite", width="30%")
+      nav
+        a.verweis(href="/index.html") Startseite
+        a.verweis(href=""+ 0) Produktdetailseite
+        a.verweis(href="#produkt") Empfehlungen
+        a.verweis(href="/produkte") Weitere Produkte
+
+    main
+    
+      block content
+     
+
+    footer
+      button.btn.Top Top
+      p Aktuelle Zeit: #{aktuelleZeit}
+      p
+        | Buch Shop

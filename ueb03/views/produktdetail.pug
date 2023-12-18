@@ -1,0 +1,38 @@
+extends layout
+
+block content  
+    .container
+        .columns
+            .column.col-xl-6.col-lg-5.col-md-12
+                h1#produkt= produkt.produkt[key].titel
+                a(href= ""+key )
+                    img.hide-lg.img-fluid(src="../"+produkt.produkt[key].bild, alt=produkt.produkt[key].titel, width="400")
+                a.show-lg(href= ""+key)
+                    img.img-fluid(src="../"+produkt.produkt[key].bild, alt=produkt.produkt[key].titel)
+            .column.col-xl-6.col-lg-7.col-md-12
+                p.preis= produkt.produkt[key].preis
+                p= produkt.produkt[key].kurzbeschreibung
+                h3 Verfügbarkeit:
+                p= produkt.produkt[key].verfuegbar
+                button(type="button" id="addToCartButton") Zum Warenkorb hinzufügen
+                p#message
+        #grenze
+        .columns
+            .column.col-lg-6.col-md-12
+                h1#rezensionen Rezensionen
+                each rezension in produkt.produkt[key].rezensionen
+                    h3= rezension.autor
+                    p!= rezension.bewertung
+                    p= rezension.bewertungstext
+       
+        form(action="/submit-review/"+key, method="POST")
+          label(for="author") Autorname:
+          input(type="text", name="author", value=author, placeholder="Autorname")
+          br
+          label(for="rating") Bewertungspunkte (1-5):
+          input(type="number", id="rating", name="rating", min="1", max="5")
+          br
+          label(for="review") Bewertungstext:
+          textarea(id="review", name="review")
+          br
+          button(type="submit") Bewertung abschicken

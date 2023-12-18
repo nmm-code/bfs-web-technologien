@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    each item,key in produkt.produkt
+        div.item
+            a(href= "produkte/"+key)
+                div.kachel
+                    h1= item.titel
+                    img(src=item.bild, alt=item.titel, width="200", height="300")
+                    p.preis= item.preis

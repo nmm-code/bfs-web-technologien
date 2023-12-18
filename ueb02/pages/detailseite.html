@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <title>Produktdetailseite</title>
+</head>
+
+<body>
+    <header>
+        <img class="Logo" src="../public/images/logo.svg" alt="Logo der Shopseite">
+        <nav>
+            <a class="verweis" href="../index.html">Startseite</a>
+            <a class="verweis" href="uebersicht.html">Produktübersicht</a>
+            <a class="verweis" href="#produkt">Produkt</a>
+            <a class="verweis" href="#rezensionen">Rezensionen</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="columns">
+
+                <div class="column col-xl-6 col-lg-5 col-md-12">
+                    <h1 id="produkt">React Buch</h1>
+                    <a href="detailseite.html"><img src="../public/images/react.jpg" class="hide-lg" alt="React Buch"
+                            width="400"></a>
+                    <a href="detailseite.html"><img src="../public/images/react.jpg" class="show-lg"
+                            alt="React Buch"></a>
+                </div>
+
+
+                <div class="column col-xl-6 col-lg-7 col-md-12">
+                    <p class="preis">20,00€</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iste sapiente alias
+                        voluptatibus vero
+                        nisi ea, sunt, tempora perspiciatis veritatis iusto officiis ipsa ad dolores incidunt
+                        mollitia
+                        consequuntur
+                        at atque.
+                    </p>
+                    <h3>Verfügbarkeit:</h3>
+                    <p>Verfügbar</p>
+                </div>
+
+            </div>
+
+            <div id="grenze"></div>
+
+            <div class="columns">
+
+                <div class="column col-lg-6 col-md-12 ">
+                    <h1 id="rezensionen">Rezensionen</h1>
+                    <h3>Autor 1</h3>
+                    <p>&#9733; &#9733; &#9733; &#9733; &#9733; Sterne</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                    </p>
+                </div>
+
+                <div class="column col-lg-6 col-md-12">
+                    <h3>Autor 2</h3>
+                    <p>&#9733; &#9733; &#9733; &#9733; &#9733; Sterne</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns" id="Benutzer" >
+                <div class="column col-6 col-md-12">
+                    <h3>Autor 3</h3>
+                    <p>&#9733; Sterne</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Modi eius eos provident aliquid fuga commodi iusto ex error sint
+                        quibusdam ad voluptas, doloremque nulla molestiae quod perspiciatis
+                        earum inventore minima.
+                    </p>
+                </div>
+            
+    
+            </div>
+            
+
+            <a href="#reviewModal" id="btn-open" class="btn">Rezension verfassen</a>
+            <div class="modal" id="modal-id">
+                <div class="modal-container">
+                    <div class="modal" id="reviewModal">
+                        <div class="modal-header">
+                            <a href="#close" id="btn-close" class="btn btn-clear float-right" aria-label="Close"></a>
+                        </div>
+                        <div class="modal-body">
+                            <p>Autor:</p>
+                            <textarea id="author" class="form-input"></textarea>
+                            
+                            <ul class="pagination flex-centered">
+                                <li class="page-item reviewSelected">1</li>
+                                <li class="page-item">2</li>
+                                <li class="page-item">3</li>
+                                <li class="page-item">4</li>
+                                <li class="page-item">5</li>
+                                <li class="page-item disabled">&#9733;</li>
+
+                              </ul>
+
+                            <p>Schreiben Sie Ihre Rezension hier:</p>
+                            <textarea id="text" class="form-input"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btn-send" class="btn">Abschicken</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+
+    <footer>
+        <button class="btn Top">Top</button>
+        <p>
+            Buch Shopseite <br>
+            &copy; 2023 Nima und Max &copy;
+            <p class="time"></p>
+        </p>
+    </footer>
+</body>
+
+</html>
